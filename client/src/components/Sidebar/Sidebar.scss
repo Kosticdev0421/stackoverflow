@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+.sidebar {
+  grid-column: right-sidebar-start / right-sidebar-end;
+  width: 300px;
+  height: calc(100vh - 7rem);
+  &__infoblock {
+    border-radius: 0.5rem;
+    background-color: $yellow;
+    color: $black-700;
+    border: 1px solid $yellow-200;
+  }
+  &__heading {
+    background-color: $yellow-100;
+    font-size: 1.25rem;
+    padding: 1.25rem;
+    font-weight: bold;
+    color: $black-600;
+    border-bottom: 1px solid $yellow-200;
+  }
+  &__points {
+    background-color: $yellow-050;
+    padding: 0.5rem 1.25rem;
+  }
+
+  &__point {
+    padding: 0.75rem 0 0.75rem 0;
+    font-size: 1.25rem;
+    display: grid;
+    grid-template-columns: 1.4rem 1fr;
+    span {
+      margin-left: 1rem;
+      cursor: pointer;
+      &:hover {
+        color: $black-600;
+      }
+    }
+  }
+
+  //Filter Block
+  &__filterblock {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    border: 1px solid $black-100;
+    border-radius: 3px;
+    &-heading {
+      padding: 1rem 1.5rem;
+      background-color: $black-025;
+      color: $black-600;
+    }
+    &-content {
+      padding: 1.25rem 1.5rem;
+      font-size: 1.25rem;
+      color: $blue;
+    }
+  }
+  //Watched Tags
+  &__tags {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    border: 1px solid $black-100;
+    border-radius: 3px;
+    &-heading {
+      padding: 1rem 1.5rem;
+      background-color: $black-025;
+      color: $black-600;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-content {
+      padding: 1.25rem 1.5rem;
+      font-size: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.item {
+  border-radius: 3px;
+  margin: 0 0.75rem 1.25rem 0;
+  padding: 0.25rem 0.7rem;
+  background-color: $theme-tag-background-color;
+  color: $theme-tag-color;
+}

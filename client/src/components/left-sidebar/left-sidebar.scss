@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+.left-sidebar {
+  // grid-column: left-sidebar-start / left-sidebar-end;
+  width: 164px;
+  font-size: 1.35rem;
+  color: $black-600;
+  font-weight: 400;
+  &__container {
+    position: sticky;
+    top: 0;
+    max-height: calc(100vh - 5rem);
+    padding-top: 24px;
+    overflow-y: auto;
+    & > * {
+      padding: 0.8rem 1rem;
+      cursor: pointer;
+      color: $black-600;
+    }
+    & > *:hover {
+      background-color: $black-075;
+      color: $black-700;
+    }
+  }
+  @media screen and (max-width: 1328px) {
+    justify-self: end;
+  }
+
+  &__createteam {
+    display: flex;
+    align-items: center;
+    &-container {
+      background-color: $orange-400;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+
+  &__questions {
+    display: flex;
+    align-items: center;
+    color: $black-600;
+    svg {
+      fill: currentColor;
+    }
+  }
+}
+
+.incentive {
+  display: flex;
+  justify-content: space-between;
+  svg {
+    fill: currentColor;
+  }
+}
+
+.shift__right {
+  margin-left: 2.25rem;
+}

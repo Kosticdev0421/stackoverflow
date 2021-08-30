@@ -1,0 +1,167 @@
+@import '../../styles/variables';
+.header {
+  grid-column: 1/-1;
+  border-top: 0.3rem solid
+    hsl(
+      $network-theme-primary-color-h,
+      $network-theme-primary-color-s,
+      $network-theme-primary-color-l
+    );
+  height: 5rem;
+  border-bottom: 0.1rem solid $black-200;
+  background-color: $black-025;
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    font-family: $ff-sans;
+    width: 83%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__logo {
+    grid-column: logo-start / logo-end;
+    justify-self: center;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    img {
+      width: 15rem;
+      height: 3rem;
+    }
+    &:hover {
+      background-color: $black-075;
+      cursor: pointer;
+    }
+  }
+
+  &__products {
+    grid-column: 3 / 4;
+    font-size: 1.25rem;
+    color: $black-600;
+    padding: 1rem 1.25rem 0.75rem 1.25rem;
+    justify-self: center;
+    margin-right: 1rem;
+    &:hover {
+      background-color: $black-075;
+      cursor: pointer;
+      border-radius: 2rem;
+      color: $black-700;
+    }
+  }
+  &__search {
+    flex: 1;
+    padding: 0.75rem;
+    border: 0.1rem solid $black-200;
+    border-radius: 0.25rem;
+    display: flex;
+    color: $black-200;
+    svg {
+      fill: currentColor;
+    }
+    &-input {
+      width: 100%;
+      margin-left: 0.5rem;
+      border: none;
+      outline: none;
+      &::placeholder {
+        color: $black-200;
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (max-width: 830px) {
+      justify-content: flex-end;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      color: $black-400;
+      &-input {
+        display: none;
+      }
+    }
+  }
+  &__features {
+    grid-column: 14 / features-end;
+    padding-left: 2rem;
+    display: flex;
+    align-self: stretch;
+    color: $black-400;
+    & > *:hover {
+      background-color: $black-075;
+      cursor: pointer;
+      color: $black-700;
+    }
+    &-1 {
+      display: flex;
+      align-items: center;
+      color: $black-600;
+      img {
+        padding-left: 0.35rem;
+        width: 2.75rem;
+        border-radius: 0.3rem;
+      }
+      &--info {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+      }
+      &--points {
+        font-size: 1.25rem;
+        padding: 0 0.5rem 0 0.75rem;
+        font-weight: bold;
+      }
+      &--circle {
+        font-size: 1.5rem;
+        padding: 0 0.25rem 0.2rem 0.3rem;
+        color: $bronze--darker;
+      }
+      &--badge {
+        font-size: 1.25rem;
+        color: $bronze--darker;
+        padding-right: 1rem;
+      }
+    }
+
+    &-2 {
+      display: flex;
+      align-items: center;
+      padding: 0 1rem 0 1rem;
+      svg {
+        fill: currentColor;
+      }
+      @media screen and (max-width: 900px) {
+        padding: 0 1rem 0 1.75rem;
+      }
+    }
+    &-3 {
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      svg {
+        fill: currentColor;
+      }
+    }
+    &-4 {
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      svg {
+        fill: currentColor;
+      }
+    }
+    &-5 {
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+}

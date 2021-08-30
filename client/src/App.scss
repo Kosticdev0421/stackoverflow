@@ -1,0 +1,32 @@
+@import './styles/variables';
+
+.app {
+  height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  &__container {
+    width: 83%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    width: calc(100% - 164px);
+    padding: 24px;
+    border: 1px solid $black-100;
+    border-right: none;
+    border-bottom: none;
+  }
+  // grid-template-columns:
+  //   [full-start] 1fr [left-sidebar-start] 18.5rem [left-sidebar-end] repeat(
+  //     8,
+  //     [col-start] minmax(min-content, 10rem) [col-end]
+  //   )
+  //   [right-sidebar-start] 34rem [right-sidebar-end] 1fr [full-end];
+
+  // @media screen and (max-width:) {
+
+  // }
+}

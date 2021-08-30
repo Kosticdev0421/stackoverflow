@@ -1,0 +1,128 @@
+@import './../../styles/variables';
+.mainbar {
+  width: calc(100% - 300px - 24px);
+  font-size: 1.3rem;
+  margin-right: 24px;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-head {
+      font-size: 2.75rem;
+      font-weight: 400;
+      color: $black-700;
+    }
+    &-ask {
+      background-color: $theme-primary-background-color;
+      border-radius: 3px;
+      color: #fff;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.25rem;
+    }
+  }
+  //category
+  &__category {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    color: $black-600;
+    &-container {
+      display: flex;
+      & > *:first-child {
+        border-radius: 3px 0 0 3px;
+        border-color: $black-400;
+        background-color: $black-075;
+        color: $black-700;
+      }
+      & > *:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    &-bountied--number {
+      padding: 0.1rem 0.5rem;
+      background-color: $blue-600;
+      margin-right: 0.75rem;
+      color: #fff;
+      border-radius: 2px;
+    }
+
+    &-item {
+      border: 1px solid $border-color;
+      padding: 0.8rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $black-025;
+      }
+    }
+  }
+  // Questionlist
+  &__questionlist {
+    border-top: 1px solid $black-100;
+    margin-left: -24px;
+    &-wrapper {
+      padding: 12px 8px;
+      display: flex;
+      background-color: $yellow-050;
+    }
+  }
+}
+
+.questionlist {
+  display: flex;
+
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    padding-right: 8px;
+    padding-left: 8px;
+    & > * {
+      padding: 6px 10px;
+    }
+    & > *:not(:last-child) {
+      margin-right: 3px;
+    }
+    &-counts {
+      font-size: 1.7rem;
+    }
+    &-name {
+      align-self: flex-start;
+    }
+  }
+
+  &__right {
+    margin-left: 1rem;
+    &-heading {
+      color: $blue-600;
+      font-size: 1.7rem;
+    }
+    &-content {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      font-size: 1.25rem;
+      color: $blue;
+      &--item {
+        border-radius: 3px;
+        margin: 0 0.75rem 1.25rem 0;
+        padding: 0.25rem 0.7rem;
+        background-color: $theme-tag-background-color;
+        color: $theme-tag-color;
+      }
+    }
+  }
+}
+
+.left__category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $black-400;
+  font-size: 1.1rem;
+}
