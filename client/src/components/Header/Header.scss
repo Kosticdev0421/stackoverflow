@@ -89,7 +89,6 @@
     grid-column: 14 / features-end;
     padding-left: 2rem;
     display: flex;
-    align-self: stretch;
     color: $black-400;
     & > *:hover {
       background-color: $black-075;
@@ -164,5 +163,40 @@
         fill: currentColor;
       }
     }
+
+    &-login {
+      font-size: 1.25rem;
+      color: $theme-button-filled-color;
+      background-color: $theme-button-filled-background-color;
+      padding: 0.75rem 1.25rem;
+      margin-right: 0.5rem;
+      text-decoration: none;
+      border: 1px solid $theme-button-filled-color;
+      border-radius: 3px;
+      &:hover {
+        color: $theme-button-filled-hover-color;
+        background-color: $theme-button-filled-hover-background-color;
+      }
+    }
+    &-signup {
+      font-size: 1.25rem;
+      padding: 0.75rem 1.25rem;
+      text-decoration: none;
+      border-radius: 3px;
+      color: #fff;
+      background-color: $theme-button-primary-background-color;
+      &:hover {
+        background-color: $theme-button-primary-hover-background-color;
+        color: #fff;
+      }
+    }
   }
+}
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.align-stretch {
+  align-self: stretch;
 }

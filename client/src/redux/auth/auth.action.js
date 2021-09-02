@@ -6,3 +6,11 @@ export const getUser=(user)=>{
     })
   }
 }
+
+export const getAccessToken=(token)=>{
+  return (dispatch)=>{
+    return axios.get('/api/current_user').then((data)=>{
+      dispatch({type:'GET_ACCESS_TOKEN',payload:data});
+    })
+  }
+}

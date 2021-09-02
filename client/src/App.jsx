@@ -25,9 +25,7 @@ function App() {
           <Mainbar/>
           <Sidebar/>
         </div>
-        
       </div>
-
     </div>
     </>
   );
