@@ -73,6 +73,9 @@
       flex-wrap: wrap;
     }
   }
+  @media screen and (max-width: 980px) {
+    display: none;
+  }
 }
 
 .cursor {

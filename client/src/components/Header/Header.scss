@@ -18,7 +18,8 @@
     top: 0;
     align-items: center;
     font-family: $ff-sans;
-    width: 83%;
+    // width: 83%;
+    max-width: calc(70 * 16px);
     margin-left: auto;
     margin-right: auto;
   }
@@ -54,7 +55,7 @@
     }
   }
   &__search {
-    flex: 1;
+    flex-grow: 1;
     padding: 0.75rem;
     border: 0.1rem solid $black-200;
     border-radius: 0.25rem;

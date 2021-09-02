@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/arihant-jain-09/stackoverflow-clone/issues"
   },
-  "homepage": "https://github.com/arihant-jain-09/stackoverflow-clone#readme"
+  "homepage": "https://github.com/arihant-jain-09/stackoverflow-clone#readme",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^7.21.1",
+    "passport": "^0.4.1",
+    "passport-stack-exchange": "^1.0.0",
+    "passport-strategy": "^1.0.0"
+  }
 }

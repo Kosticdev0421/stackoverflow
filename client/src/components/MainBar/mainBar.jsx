@@ -29,9 +29,15 @@ const Mainbar = () => {
                 how can i get cursor position on contenteditable div?
               </div>
               <div className="questionlist__right-content">
-                <div className="questionlist__right-content--item">javascript</div>
-                <div className="questionlist__right-content--item">reactjs</div>
-                <div className="questionlist__right-content--item">nodejs</div>
+                <span className="questionlist__right-content--item">javascript</span>
+                <span className="questionlist__right-content--item">reactjs</span>
+                <span className="questionlist__right-content--item">nodejs</span>
+                <div className="questionlist__right-time">
+                  <span>modified </span>
+                  <span>16 mins ago </span>
+                  <span className='questionlist__right-time--name'>Drew Reese </span>
+                  <span className='questionlist__right-time--score'>55.8k</span>
+                </div>
               </div>
             </div>
           </div>

@@ -3,11 +3,19 @@
   width: calc(100% - 300px - 24px);
   font-size: 1.3rem;
   margin-right: 24px;
+  @media screen and (max-width: 980px) {
+    width: unset;
+    flex: 1;
+    margin-right: unset;
+  }
 
   &__heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 980px) {
+      padding-right: 18px;
+    }
 
     &-head {
       font-size: 2.75rem;
@@ -32,6 +40,9 @@
     justify-content: flex-end;
     margin-bottom: 16px;
     color: $black-600;
+    @media screen and (max-width: 980px) {
+      padding-right: 18px;
+    }
     &-container {
       display: flex;
       & > *:first-child {
@@ -66,9 +77,12 @@
     border-top: 1px solid $black-100;
     margin-left: -24px;
     &-wrapper {
-      padding: 12px 8px;
+      padding: 12px 8px 12px 0;
       display: flex;
       background-color: $yellow-050;
+      @media screen and (max-width: 980px) {
+        padding-right: 18px;
+      }
     }
   }
 }
@@ -97,6 +111,7 @@
 
   &__right {
     margin-left: 1rem;
+    flex: 1;
     &-heading {
       color: $blue-600;
       font-size: 1.7rem;
@@ -105,15 +120,28 @@
       margin-top: 0.75rem;
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      align-items: center;
       font-size: 1.25rem;
       color: $blue;
       &--item {
         border-radius: 3px;
-        margin: 0 0.75rem 1.25rem 0;
+        margin: 0 0.75rem 0 0;
         padding: 0.25rem 0.7rem;
         background-color: $theme-tag-background-color;
         color: $theme-tag-color;
+      }
+      div {
+        margin-left: auto;
+        color: $black-350;
+      }
+    }
+    &-time {
+      &--name {
+        color: $blue-600;
+      }
+      &--score {
+        color: $black-400;
+        font-weight: bold;
       }
     }
   }
