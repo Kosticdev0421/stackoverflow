@@ -4,19 +4,16 @@ import Header from './components/Header/Header';
 import LeftSidebar from './components/left-sidebar/left-sidebar';
 import Mainbar from './components/MainBar/mainBar';
 import Sidebar from './components/Sidebar/Sidebar';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { getUser } from './redux/auth/auth.action';
 function App() {
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    const getUser=async()=>{
-      const {data}=await axios.get('/api/current_user');
-      console.log(data);
-    }
-    getUser();
+    dispatch(getUser());
     return () => {
       
     }
-  }, [])
+  }, [dispatch])
 
   return (
     <>
