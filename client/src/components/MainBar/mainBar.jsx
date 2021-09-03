@@ -1,6 +1,30 @@
 import './mainBar.scss';
-
+import axios from 'axios';
+import { useState,useEffect } from 'react';
+import QuestionMap from './questionMap';
 const Mainbar = () => {
+
+  const [questions,setQuestions]=useState([]);
+  const url='https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&tagged=nodejs&site=stackoverflow';
+  useEffect(() => {
+    const getQuestions=async()=>{
+      const {data:{items}}=await axios.get(url);
+      setQuestions(items);
+      console.log(items);
+    }
+    getQuestions();
+    return () => {
+      
+    }
+  }, [])
+
+//   function timeDifference(timestamp) {
+//     var difference = Math.floor(Date.now() / 1000) - timestamp;
+//     const duration = moment.duration(difference * 1000);
+//     console.log(duration.minutes());
+// }
+
+
   return (
     <>
       <div className="mainbar">
@@ -18,29 +42,9 @@ const Mainbar = () => {
           </div>
         </div>
         <div className="mainbar__questionlist">
-          <div className="mainbar__questionlist-wrapper">
-            <div className="questionlist__left">
-              <div className="questionlist__left-votes left__category"><span  className='questionlist__left-counts'>0</span ><span className='questionlist__left-name'>votes</span></div>
-              <div className="questionlist__left-answers left__category"><span className='questionlist__left-counts'>0</span><span className='questionlist__left-name'>answers</span></div>
-              <div className="questionlist__left-views left__category"><span className='questionlist__left-counts'>6</span><span className='questionlist__left-name'>views</span></div>
-            </div>
-            <div className="questionlist__right">
-              <div className="questionlist__right-heading">
-                how can i get cursor position on contenteditable div?
-              </div>
-              <div className="questionlist__right-content">
-                <span className="questionlist__right-content--item">javascript</span>
-                <span className="questionlist__right-content--item">reactjs</span>
-                <span className="questionlist__right-content--item">nodejs</span>
-                <div className="questionlist__right-time">
-                  <span>modified </span>
-                  <span>16 mins ago </span>
-                  <span className='questionlist__right-time--name'>Drew Reese </span>
-                  <span className='questionlist__right-time--score'>55.8k</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {questions && questions.map((question,index)=>{
+          return <QuestionMap key={index} question={question} />
+        })}
         </div>
       </div> 
     </>
