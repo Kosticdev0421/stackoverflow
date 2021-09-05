@@ -10,7 +10,9 @@ app.use(cookieSession({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.listen(5000,()=>{
+
+const PORT=process.env.PORT || 5000
+app.listen(PORT,()=>{
   console.log('Server started on 5000');
 })
 
@@ -20,6 +22,14 @@ app.get('/api/current_user',(req,res)=>{
 })
 
 app.get('/auth/stack-exchange',passport.authenticate('stack-exchange'));
+
+if(process.env.NODE_ENV==='production'){
+  app.use(express.static('client/build'))
+  const path=require('path');
+  app.get('*',(req,res)=>{
+      res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+  })
+}
 
 app.get('/auth/stack-exchange/callback',
   passport.authenticate('stack-exchange', { failureRedirect: '/auth/stack-exchange' }),
