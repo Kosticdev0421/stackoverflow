@@ -28,6 +28,7 @@
     "npm": "^7.21.1",
     "passport": "^0.4.1",
     "passport-stack-exchange": "^1.0.0",
-    "passport-strategy": "^1.0.0"
+    "passport-strategy": "^1.0.0",
+    "sass-loader": "^12.1.0"
   }
 }

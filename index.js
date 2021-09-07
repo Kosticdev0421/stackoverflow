@@ -21,7 +21,9 @@ app.get('/api/current_user',(req,res)=>{
   res.send(req.user);
 })
 
-app.get('/auth/stack-exchange',passport.authenticate('stack-exchange'));
+app.get('/auth/stack-exchange',passport.authenticate('stack-exchange',{
+  scope:['read_inbox','private_info']
+}));
 
 if(process.env.NODE_ENV==='production'){
   app.use(express.static('client/build'))
@@ -31,8 +33,7 @@ if(process.env.NODE_ENV==='production'){
   })
 }
 
-app.get('/auth/stack-exchange/callback',
-  passport.authenticate('stack-exchange', { failureRedirect: '/auth/stack-exchange' }),
-  function(req, res) {
+app.get('/auth/stack-exchange/callback',passport.authenticate('stack-exchange'),
+  (req, res)=> {
     res.redirect('/');
   });

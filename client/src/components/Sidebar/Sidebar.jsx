@@ -1,7 +1,10 @@
 import './Sidebar.scss';
 import {ReactComponent as Pencil} from '../../assets/pencil.svg';
 import {ReactComponent as Logo} from '../../assets/LogoGlyphXxs.svg';
+import { useSelector } from 'react-redux';
 const Sidebar = () => {
+  const tags=useSelector((state)=>state.info.tags);
+  // console.log(tags);
   return (
     <>
       <div className="sidebar">
@@ -63,7 +66,10 @@ const Sidebar = () => {
             <span className='cursor'>edit</span>
           </div>
           <div className="sidebar__tags-content">
-            <div className="item">css</div>
+            {tags?.items?.map((item,index)=>{
+              return <div key={index} className='item'>{item.tag_name}</div>
+            })}
+            {/* <div className="item">css</div>
             <div className="item">firebase</div>
             <div className="item">flutter</div>
             <div className="item">google-cloud-firestore</div>
@@ -73,7 +79,7 @@ const Sidebar = () => {
             <div className="item">reactjs</div>
             <div className="item">react-redux</div>
             <div className="item">react-router</div>
-            <div className="item">sass</div>
+            <div className="item">sass</div> */}
           </div>
         </div>
 

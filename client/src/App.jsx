@@ -6,10 +6,16 @@ import Mainbar from './components/MainBar/mainBar';
 import Sidebar from './components/Sidebar/Sidebar';
 import { useDispatch } from 'react-redux';
 import { getUser } from './redux/auth/auth.action';
+import { getTags } from './redux/api/api.action';
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUser());
+
+    Promise.resolve(dispatch(getUser())).then(
+      () => dispatch(getTags()));
+    // dispatch(getUser());
+    // dispatch(getTags());
     return () => {
       
     }

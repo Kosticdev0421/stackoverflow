@@ -14,7 +14,7 @@ passport.deserializeUser((user,done)=>{
 passport.use(new StackExchangeStrategy({
   clientID:keys.ClientID,
   clientSecret:keys.ClientSecret,
-  callbackURL:'http://localhost:3000/auth/stack-exchange/callback',
+  callbackURL:'/auth/stack-exchange/callback',
   stackAppsKey:keys.KEY,
   site: 'stackoverflow'
 },
@@ -22,6 +22,7 @@ passport.use(new StackExchangeStrategy({
     console.log('accessToken: ',accessToken);
     console.log('refreshToken: ',refreshToken);
     console.log('profile: ',profile);
-    return done(null,profile);
+    const obj={...profile,accessToken:accessToken,key:keys.KEY}
+    return done(null,obj);
   }
 ))

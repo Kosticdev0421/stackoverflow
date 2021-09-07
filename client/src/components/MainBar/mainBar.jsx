@@ -42,7 +42,7 @@ const Mainbar = () => {
           </div>
         </div>
         <div className="mainbar__questionlist">
-        {questions && questions.map((question,index)=>{
+        {questions?.map((question,index)=>{
           return <QuestionMap key={index} question={question} />
         })}
         </div>
